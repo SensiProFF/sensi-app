@@ -3,7 +3,7 @@
 
 <head>
 
-<title>Sensi Generator</title>
+<title>SensiPro Generator</title>
 
 <style>
 
@@ -14,28 +14,29 @@ font-family:Arial;
 text-align:center;
 }
 
-.box{
-background:#111;
-width:350px;
+.panel{
+width:380px;
 margin:auto;
-margin-top:120px;
+margin-top:100px;
+background:#111;
 padding:30px;
 border-radius:15px;
-box-shadow:0 0 30px cyan;
+box-shadow:0 0 25px cyan;
 }
 
-h2{
+h1{
 color:cyan;
 }
 
 button{
 padding:12px;
-background:cyan;
+margin:8px;
+width:200px;
 border:none;
 border-radius:10px;
+background:cyan;
 font-size:16px;
 cursor:pointer;
-width:200px;
 }
 
 button:hover{
@@ -53,11 +54,17 @@ font-size:18px;
 
 <body>
 
-<div class="box">
+<div class="panel">
 
-<h2>🎯 SENSI GENERATOR</h2>
+<h1>SENSI PRO</h1>
 
-<button onclick="gerar()">GERAR SENSI</button>
+<button onclick="gerar()">Gerar Sensi</button>
+
+<button onclick="packRush()">Pack Rush</button>
+
+<button onclick="packPro()">Pack Pro Player</button>
+
+<button onclick="packLow()">Pack Celular Fraco</button>
 
 <div class="result" id="resultado"></div>
 
@@ -67,20 +74,40 @@ font-size:18px;
 
 function gerar(){
 
-let geral = 140 + Math.floor(Math.random()*20)
-let red = 170 + Math.floor(Math.random()*20)
-let x2 = 160 + Math.floor(Math.random()*20)
-let x4 = 140 + Math.floor(Math.random()*20)
-let awm = 90 + Math.floor(Math.random()*20)
+let dpi = Math.floor(Math.random()*400)+400
 
-document.getElementById("resultado").innerHTML =
+let geral = Math.floor(dpi/5)+120
+let red = Math.floor(dpi/5)+140
+let x2 = Math.floor(dpi/6)+130
+let x4 = Math.floor(dpi/7)+120
+let awm = Math.floor(dpi/8)+90
+
+mostrar(geral,red,x2,x4,awm)
+
+}
+
+function packRush(){
+mostrar(160,190,180,150,110)
+}
+
+function packPro(){
+mostrar(145,175,165,135,95)
+}
+
+function packLow(){
+mostrar(130,150,140,120,80)
+}
+
+function mostrar(g,r,x2,x4,a){
+
+document.getElementById("resultado").innerHTML=
 
 `
-Geral: ${geral} <br>
-Red Dot: ${red} <br>
-2x Scope: ${x2} <br>
-4x Scope: ${x4} <br>
-AWM Scope: ${awm}
+Geral: ${g}<br>
+Red Dot: ${r}<br>
+2x Scope: ${x2}<br>
+4x Scope: ${x4}<br>
+AWM Scope: ${a}
 `
 
 }
