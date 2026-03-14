@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Sensi Generator</title>
+
+<style>
+
+body{
+background:linear-gradient(135deg,#000000,#0a0a0a);
+color:white;
+font-family:Arial;
+text-align:center;
+}
+
+.box{
+background:#111;
+width:350px;
+margin:auto;
+margin-top:120px;
+padding:30px;
+border-radius:15px;
+box-shadow:0 0 30px cyan;
+}
+
+h2{
+color:cyan;
+}
+
+button{
+padding:12px;
+background:cyan;
+border:none;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+width:200px;
+}
+
+button:hover{
+background:#00bcd4;
+}
+
+.result{
+margin-top:20px;
+font-size:18px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>🎯 SENSI GENERATOR</h2>
+
+<button onclick="gerar()">GERAR SENSI</button>
+
+<div class="result" id="resultado"></div>
+
+</div>
+
+<script>
+
+function gerar(){
+
+let geral = 140 + Math.floor(Math.random()*20)
+let red = 170 + Math.floor(Math.random()*20)
+let x2 = 160 + Math.floor(Math.random()*20)
+let x4 = 140 + Math.floor(Math.random()*20)
+let awm = 90 + Math.floor(Math.random()*20)
+
+document.getElementById("resultado").innerHTML =
+
+`
+Geral: ${geral} <br>
+Red Dot: ${red} <br>
+2x Scope: ${x2} <br>
+4x Scope: ${x4} <br>
+AWM Scope: ${awm}
+`
+
+}
+
+</script>
+
+</body>
+</html>
